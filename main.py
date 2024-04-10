@@ -35,8 +35,19 @@
 #   "....R...RCR..G....G",  // 14
 #   "....R...RCR..G....G",  // 15
 
-
+from pprint import pprint
 class traffic:
   def __init__(self, road, n):
     self.road = road
+    self.result = list(self.road)
     self.n = n
+
+    self.light_time = {"G": 5, "O": 1, "R": 5}  # Время для каждого цвета светофора
+    self.lights = {}  # Словарь для хранения светофоров
+    self.car_index = self.result.index("C")  # Индекс машины на дороге
+    self.pred = ""  # Предыдущее состояние светофора
+
+    for i in range(len(self.result)):
+      x = self.road[i]
+      if x in self.light_time:
+          self.lights[i] = (x, self.light_time[x])  # Запись светофора в словарь
