@@ -88,3 +88,21 @@ class traffic:
         self.__move_car()
         traffic_road.append("".join(self.result))
     return traffic_road
+  
+  def __move_car(self):
+    # Движение машины
+    if self.car_index + 1 < len(self.road) - 1:
+        if self.result[self.car_index + 1] == ".":  # Если следующая ячейка свободна, машина движется вперед
+            self.result[self.car_index], self.result[self.car_index + 1] = self.result[self.car_index + 1], self.result[self.car_index] #Машина движется вперед если перед ней точка, а прошлое место машины заменяется на "."
+            if self.pred == "G":
+                self.result[self.car_index] = self.pred
+                self.pred = "."
+  
+            self.car_index += 1
+        elif self.result[self.car_index + 1] == "R":  # Если перед машиной красный свет, машина останавливается
+            pass
+        elif self.result[self.car_index + 1] == "G":  # Если перед машиной зеленый свет, машина движется вперед
+            self.result[self.car_index], self.result[self.car_index + 1] = self.result[self.car_index + 1], self.result[self.car_index]
+            self.result[self.car_index] = "."
+            self.pred = "G"
+            self.car_index += 1
