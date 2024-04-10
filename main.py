@@ -76,6 +76,15 @@ class traffic:
     #         self.lights[key] = color, n  # Обновление оставшегося времени
     pass
 
+  def begin(self):
+    count = 0  # Счетчик времени
+    traffic_road = [road]
+  #print(f"{''.join(result)} - {count}")
+  # Начало движения
+    while count < self.n:
 
-  
-    
+        count += 1
+        self.__change_light()
+        self.__move_car()
+        traffic_road.append("".join(self.result))
+    return traffic_road
