@@ -37,4 +37,6 @@
 
 
 class traffic:
-  pass
+  def __init__(self, road, n):
+    self.road = road
+    self.n = n
