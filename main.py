@@ -51,3 +51,31 @@ class traffic:
       x = self.road[i]
       if x in self.light_time:
           self.lights[i] = (x, self.light_time[x])  # Запись светофора в словарь
+
+  def change_light(self):
+    # if light == "G":
+    #   return "O"
+    # elif light == "O":
+    #   return "R"
+    # else:
+    #   return "G"
+    # # Изменение состояния светофоров
+    # for key in self.lights:
+    #     if key == self.car_index:
+    #         continue
+
+    #     color, n = self.lights[key]  # Получение текущего цвета и оставшегося времени
+    #     n -= 1  # Уменьшение времени на один шаг
+
+    #     self.result[key] = color  # Обновление цвета на дороге
+
+    #     if n < 1:
+    #         color = change_light(color)  # Смена цвета светофора
+    #         self.lights[key] = color, self.light_time[color]  # Обновление времени и цвета
+    #     else:
+    #         self.lights[key] = color, n  # Обновление оставшегося времени
+    pass
+
+
+  
+    
