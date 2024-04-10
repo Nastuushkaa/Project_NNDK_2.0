@@ -106,3 +106,10 @@ class traffic:
             self.result[self.car_index] = "."
             self.pred = "G"
             self.car_index += 1
+
+
+t = Traffic("C...R...R.R..G....G", 15)
+road = "C...R...R.R..G....G"  # Дорога с машиной и светофорами
+n = 20  # Время движения
+traffic = Traffic(road, n)
+pprint(traffic.begin())
