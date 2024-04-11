@@ -35,6 +35,3 @@
 #   "....R...RCR..G....G",  // 14
 #   "....R...RCR..G....G",  // 15
 
-
-class traffic:
-  pass
